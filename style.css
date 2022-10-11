@@ -1,0 +1,125 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #414141;
+}
+
+.board {
+  display: grid;
+  grid-template-rows: 120px 20px 120px 20px 120px;
+  grid-template-columns: 120px 20px 120px 20px 120px;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.cell {
+  height: 120px;
+  width: 120px;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.branch:nth-child(7),
+.branch:nth-child(15) {
+  width: 160px;
+  grid-column: 2/5;
+}
+
+.branch {
+  background-color: rgb(198, 40, 219);
+}
+
+.branch:nth-child(2),
+.branch:nth-child(4),
+.branch:nth-child(18),
+.branch:nth-child(20) {
+  height: 135px;
+  width: 20px;
+}
+
+.branch:nth-child(2),
+.branch:nth-child(4) {
+  position: relative;
+  bottom: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.branch:nth-child(18),
+.branch:nth-child(20) {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.branch:nth-child(6),
+.branch:nth-child(8),
+.branch:nth-child(14),
+.branch:nth-child(16) {
+  height: 20px;
+  width: 135px;
+}
+
+.branch:nth-child(6),
+.branch:nth-child(14) {
+  position: relative;
+  right: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.branch:nth-child(8),
+.branch:nth-child(16) {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* */
+
+.cell.circle,
+.cell.x {
+  cursor: auto;
+}
+
+.cell.x::after,
+.cell.x::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 100px;
+  background-color: #000;
+}
+
+.cell.x::after {
+  transform: rotate(45deg);
+}
+
+.cell.x::before {
+  transform: rotate(-45deg);
+}
+
+.cell.circle::after,
+.cell.circle::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.cell.circle::after {
+  background-color: #414141;
+  width: 70px;
+  height: 70px;
+}
