@@ -10,6 +10,7 @@ body {
   background-color: #414141;
 }
 
+/* board */
 .board {
   display: grid;
   grid-template-rows: 120px 20px 120px 20px 120px;
@@ -30,61 +31,61 @@ body {
   cursor: pointer;
 }
 
-.branch:nth-child(7),
-.branch:nth-child(15) {
+.border {
+  background-color: rgb(198, 40, 219);
+}
+
+.border:nth-child(7),
+.border:nth-child(15) {
   width: 160px;
   grid-column: 2/5;
 }
 
-.branch {
-  background-color: rgb(198, 40, 219);
-}
-
-.branch:nth-child(2),
-.branch:nth-child(4),
-.branch:nth-child(18),
-.branch:nth-child(20) {
+.border:nth-child(2),
+.border:nth-child(4),
+.border:nth-child(18),
+.border:nth-child(20) {
   height: 135px;
   width: 20px;
 }
 
-.branch:nth-child(2),
-.branch:nth-child(4) {
+.border:nth-child(2),
+.border:nth-child(4) {
   position: relative;
   bottom: 15px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
-.branch:nth-child(18),
-.branch:nth-child(20) {
+.border:nth-child(18),
+.border:nth-child(20) {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-.branch:nth-child(6),
-.branch:nth-child(8),
-.branch:nth-child(14),
-.branch:nth-child(16) {
+.border:nth-child(6),
+.border:nth-child(8),
+.border:nth-child(14),
+.border:nth-child(16) {
   height: 20px;
   width: 135px;
 }
 
-.branch:nth-child(6),
-.branch:nth-child(14) {
+.border:nth-child(6),
+.border:nth-child(14) {
   position: relative;
   right: 15px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 
-.branch:nth-child(8),
-.branch:nth-child(16) {
+.border:nth-child(8),
+.border:nth-child(16) {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-/* */
+/*x and circle */
 
 .cell.circle,
 .cell.x {
@@ -119,6 +120,44 @@ body {
 }
 
 .cell.circle::after {
+  background-color: #414141;
+  width: 70px;
+  height: 70px;
+}
+
+/*x and circle hover*/
+
+.board:not(.player-circle-turn) > .cell:hover:not(.cell.x, .cell.circle)::after,
+.board:not(.player-circle-turn)
+  > .cell:hover:not(.cell.x, .cell.circle)::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 100px;
+  background-color: rgb(41, 39, 39);
+}
+
+.board:not(.player-circle-turn)
+  > .cell:hover:not(.cell.x, .cell.circle)::after {
+  transform: rotate(45deg);
+}
+
+.board:not(.player-circle-turn)
+  > .cell:hover:not(.cell.x, .cell.circle)::before {
+  transform: rotate(-45deg);
+}
+
+.board:not(.player-x-turn) > .cell:hover:not(.cell.x, .cell.circle)::after,
+.board:not(.player-x-turn) > .cell:hover:not(.cell.x, .cell.circle)::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(41, 39, 39);
+  border-radius: 50%;
+}
+
+.board:not(.player-x-turn) > .cell:hover:not(.cell.x, .cell.circle)::after {
   background-color: #414141;
   width: 70px;
   height: 70px;
