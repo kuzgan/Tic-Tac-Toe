@@ -1,4 +1,8 @@
 export default class TicTacToe {
+  constructor(board, cells) {
+    this.board = board;
+    this.cell = cells;
+  }
   winingConbinations = [
     [0,1,2],
     [3,4,5],
@@ -9,10 +13,6 @@ export default class TicTacToe {
     [0,4,8],
     [2,4,6]
   ];
-  constructor(board, cells) {
-    this.board = board;
-    this.cell = cells;
-  }
 
 
   changeCurrentPlayer() {
@@ -48,6 +48,8 @@ export default class TicTacToe {
   }
 
   checkingForWinConditions(){
+    
+      targetedCell.parentNode.childNodes
     
   }
 }

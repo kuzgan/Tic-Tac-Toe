@@ -8,6 +8,7 @@ console.dir(cells);
 cells.forEach((cell) => {
   cell.addEventListener("click", () => {
     game.cellClick(cell);
+    console.log(cell)
   });
 });
 
