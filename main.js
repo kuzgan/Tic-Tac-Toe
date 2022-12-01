@@ -1,6 +1,6 @@
 import TicTacToe from "./ticTacToe.js";
 
-const message = document.querySelector("#text");
+const message = document.querySelector("#end-game-message");
 const board = document.querySelector(".board");
 const cells = document.querySelectorAll(".cell");
 

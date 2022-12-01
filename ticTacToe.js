@@ -35,8 +35,9 @@ export default class TicTacToe {
     } else {
       return;
     }
-    if(this.checkForWinConditions()) this.gameEnds(false);
-    if(this.draw()) this.gameEnds(true);
+    if (this.checkForWinConditions()) {
+      this.gameEnds(false);
+    } else if (this.draw()) this.gameEnds(true);
 
     this.changeCurrentPlayer();
   }
@@ -76,6 +77,7 @@ export default class TicTacToe {
       });
     });
   }
+
   draw() {
     return [...this.cell].every((element) => {
       return (
@@ -87,15 +89,18 @@ export default class TicTacToe {
   gameEnds(draw) {
     if (draw) {
       console.log("draw");
-      this.message.innerText = "It's a draw";
+      this.message.firstChild.innerText = "It's a draw";
+      this.message.classList.toggle("visible")
     } else {
       if (this.board.classList.contains("player-x-turn")) {
         console.log("x win");
-        this.message.innerText = "X win";
+        this.message.firstChild.innerText = "X win";
+        this.message.classList.toggle("visible")
       }
       if (this.board.classList.contains("player-circle-turn")) {
         console.log("circle win");
-        this.message.innerText = "Circle win";
+        this.message.firstChild.innerText = "Circle win";
+        this.message.classList.toggle("visible")
       }
     }
   }
