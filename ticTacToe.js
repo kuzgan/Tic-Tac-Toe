@@ -89,18 +89,18 @@ export default class TicTacToe {
   gameEnds(draw) {
     if (draw) {
       console.log("draw");
-      this.message.firstChild.innerText = "It's a draw";
-      this.message.classList.toggle("visible")
+      this.message.firstElementChild.firstElementChild.innerHTML = "It's a draw";
+      this.message.classList.toggle("visible");
     } else {
       if (this.board.classList.contains("player-x-turn")) {
         console.log("x win");
-        this.message.firstChild.innerText = "X win";
-        this.message.classList.toggle("visible")
+        this.message.firstElementChild.firstElementChild.innerHTML = "X win";
+        this.message.classList.toggle("visible");
       }
       if (this.board.classList.contains("player-circle-turn")) {
         console.log("circle win");
-        this.message.firstChild.innerText = "Circle win";
-        this.message.classList.toggle("visible")
+        this.message.firstElementChild.firstElementChild.innerHTML = "Circle win";
+        this.message.classList.toggle("visible");
       }
     }
   }
