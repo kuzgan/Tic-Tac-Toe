@@ -16,21 +16,9 @@ export default class TicTacToe {
   ];
 
   cellClick(targetedCell) {
-    if (
-      this.board.classList.contains("player-circle-turn") &&
-      !(
-        targetedCell.classList.contains("x") ||
-        targetedCell.classList.contains("circle")
-      )
-    ) {
+    if (this.board.classList.contains("player-circle-turn") && !(targetedCell.classList.contains("x") || targetedCell.classList.contains("circle"))) {
       targetedCell.classList.add("circle");
-    } else if (
-      this.board.classList.contains("player-x-turn") &&
-      !(
-        targetedCell.classList.contains("x") ||
-        targetedCell.classList.contains("circle")
-      )
-    ) {
+    } else if (this.board.classList.contains("player-x-turn") && !(targetedCell.classList.contains("x") || targetedCell.classList.contains("circle"))) {
       targetedCell.classList.add("x");
     } else {
       return;
@@ -43,19 +31,13 @@ export default class TicTacToe {
   }
 
   changeCurrentPlayer() {
-    if (this.board.classList.contains("player-circle-turn"))
-      return this.board.classList.replace(
-        "player-circle-turn",
-        "player-x-turn"
-      );
-    if (this.board.classList.contains("player-x-turn"))
-      this.board.classList.replace("player-x-turn", "player-circle-turn");
+    if (this.board.classList.contains("player-circle-turn")) return this.board.classList.replace("player-circle-turn", "player-x-turn");
+    if (this.board.classList.contains("player-x-turn")) this.board.classList.replace("player-x-turn", "player-circle-turn");
   }
 
   clearBoard() {
     this.cell.forEach((cell) => {
-      if (!cell.classList.contains("x") && !cell.classList.contains("circle"))
-        return;
+      if (!cell.classList.contains("x") && !cell.classList.contains("circle")) return;
       cell.classList.remove("x", "circle");
     });
   }
@@ -69,8 +51,7 @@ export default class TicTacToe {
   checkForWinConditions() {
     let currentClass;
     if (this.board.classList.contains("player-x-turn")) currentClass = "x";
-    if (this.board.classList.contains("player-circle-turn"))
-      currentClass = "circle";
+    if (this.board.classList.contains("player-circle-turn")) currentClass = "circle";
     return this.winingConbinations.some((element) => {
       return element.every((index) => {
         return this.cell[index].classList.contains(currentClass);
@@ -80,9 +61,7 @@ export default class TicTacToe {
 
   draw() {
     return [...this.cell].every((element) => {
-      return (
-        element.classList.contains("x") || element.classList.contains("circle")
-      );
+      return element.classList.contains("x") || element.classList.contains("circle");
     });
   }
 
