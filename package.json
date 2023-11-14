@@ -1,0 +1,25 @@
+{
+  "name": "Tic-Tac-Toe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuzgan/Tic-Tac-Toe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuzgan/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/kuzgan/Tic-Tac-Toe",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}
