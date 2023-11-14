@@ -7,7 +7,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #414141;
+  background-color: hsl(0, 0%, 25%);
+  max-height: 100vh;
 }
 
 /* board */
@@ -161,4 +162,57 @@ body {
   background-color: #414141;
   width: 70px;
   height: 70px;
+}
+
+/* Message box */
+
+#end-game-message {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1;
+}
+
+#end-game-message.visible {
+  display: flex;
+}
+
+#end-game-message > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsla(0, 0%, 25%, 0.5);
+  height: 430px;
+  width: 430px;
+}
+
+.restart-button {
+  background-color: hsl(0, 0%, 25%);
+  border: solid;
+  border-radius: 10%;
+  color: hsl(0, 0%, 70%);
+  padding: 0;
+  margin: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+}
+
+#text {
+  margin: 15px;
+  text-align: center;
+  font-size: 48px;
+  color: hsl(0, 0%, 70%);
+  height: 50px;
+  min-width: 100px;
 }
